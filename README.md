@@ -6,7 +6,7 @@ Pre Reqs:
 - VirtualBox
 - Vagrant
 
-'git clone <this repo>
-'vagrant up
+``git clone <this repo>
+vagrant up``
 
 Enjoy!
