@@ -23,5 +23,10 @@ sudo cp -r /home/vagrant/impress-vagrant /data/www
 sudo chmod 755 /home/vagrant/impress-vagrant
 
 # Remove firewall restrictions
-sudo service iptables stop
+sudo iptables -F
+sudo iptables -A INPUT -p tcp -m tcp --dport 80 -j ACCEPT
+sudo iptables -A INPUT -p tcp -m tcp --dport 8080 -j ACCEPT
+sudo iptables -A INPUT -p tcp -m tcp --dport 22 -j ACCEPT
+sudo iptables-save | sudo tee /etc/sysconfig/iptables
+sudo service iptables restart
 
